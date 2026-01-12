@@ -253,7 +253,7 @@ class EnergyPlatformModel(BaseModel):
         return [{
             'rid': 1,
             'platform_name': 1,  # nee.cc
-            'platform_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'platform_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)
             'platform_apikey': 'encrypted_key',
             'platform_balance': 1000000,
             'permission_id': 0,
@@ -386,7 +386,7 @@ class EnergyWalletTradeListModel(BaseModel):
             'bot_username': 'energybot',
             'bot_admin_username': '@admin',
             'energy_platform_bot_rid': 1,
-            'tg_uid': 123456789  # 添加缺失的tg_uid字段，使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890  # 添加缺失的tg_uid字段，使用有效的Telegram chat_id (数字)
         }]
 
     def get_by_tx_hash(self, hash_list):
