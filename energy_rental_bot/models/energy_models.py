@@ -22,7 +22,7 @@ class EnergyAiBishuModel(BaseModel):
         # 模拟数据 - 实际应该从数据库查询
         return {
             'rid': 1,
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'wallet_addr': wallet_addr,
             'bot_token': 'bot_token_here',
             'is_notice_admin': 'N',
@@ -99,7 +99,7 @@ class EnergyAiBishuModel(BaseModel):
         # 模拟数据
         return [{
             'rid': 1,
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
             'per_bishu_energy_quantity': 50000,
             'bot_token': 'bot_token_here',
@@ -131,7 +131,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         # 模拟数据 - 实际应该从数据库查询
         return {
             'rid': 1,
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'wallet_addr': wallet_addr,
             'bot_token': 'bot_token_here',
             'is_notice_admin': 'N',
@@ -165,7 +165,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
             'is_open_ai_trusteeship': 'Y',
             'status': 0,
             'per_buy_energy_quantity': 50000,
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'bot_token': 'bot_token_here'
         }]
 
@@ -183,7 +183,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         return [{
             'rid': 1,
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'per_buy_energy_quantity': 50000,
             'trx_price_energy_32000': 50,
             'trx_price_energy_65000': 100,
@@ -218,7 +218,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         # 模拟数据
         return [{
             'rid': 1,
-            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
+            'tg_uid': 1234567890,  # 使用有效的Telegram chat_id (数字)，测试用
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
             'per_buy_energy_quantity': 50000,
             'bot_token': 'bot_token_here',
