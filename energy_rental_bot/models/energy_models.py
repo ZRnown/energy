@@ -22,7 +22,7 @@ class EnergyAiBishuModel(BaseModel):
         # 模拟数据 - 实际应该从数据库查询
         return {
             'rid': 1,
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'wallet_addr': wallet_addr,
             'bot_token': 'bot_token_here',
             'is_notice_admin': 'N',
@@ -99,7 +99,7 @@ class EnergyAiBishuModel(BaseModel):
         # 模拟数据
         return [{
             'rid': 1,
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
             'per_bishu_energy_quantity': 50000,
             'bot_token': 'bot_token_here',
@@ -131,7 +131,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         # 模拟数据 - 实际应该从数据库查询
         return {
             'rid': 1,
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'wallet_addr': wallet_addr,
             'bot_token': 'bot_token_here',
             'is_notice_admin': 'N',
@@ -165,7 +165,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
             'is_open_ai_trusteeship': 'Y',
             'status': 0,
             'per_buy_energy_quantity': 50000,
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'bot_token': 'bot_token_here'
         }]
 
@@ -183,7 +183,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         return [{
             'rid': 1,
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'per_buy_energy_quantity': 50000,
             'trx_price_energy_32000': 50,
             'trx_price_energy_65000': 100,
@@ -218,7 +218,7 @@ class EnergyAiTrusteeshipModel(BaseModel):
         # 模拟数据
         return [{
             'rid': 1,
-            'tg_uid': 'user123',
+            'tg_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'wallet_addr': 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
             'per_buy_energy_quantity': 50000,
             'bot_token': 'bot_token_here',
@@ -253,7 +253,7 @@ class EnergyPlatformModel(BaseModel):
         return [{
             'rid': 1,
             'platform_name': 1,  # nee.cc
-            'platform_uid': 'user123',
+            'platform_uid': 123456789,  # 使用有效的Telegram chat_id (数字)
             'platform_apikey': 'encrypted_key',
             'platform_balance': 1000000,
             'permission_id': 0,
@@ -385,7 +385,8 @@ class EnergyWalletTradeListModel(BaseModel):
             'package_name': '50000能量1天',
             'bot_username': 'energybot',
             'bot_admin_username': '@admin',
-            'energy_platform_bot_rid': 1
+            'energy_platform_bot_rid': 1,
+            'tg_uid': 123456789  # 添加缺失的tg_uid字段，使用有效的Telegram chat_id (数字)
         }]
 
     def get_by_tx_hash(self, hash_list):
