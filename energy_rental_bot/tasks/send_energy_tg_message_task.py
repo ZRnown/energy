@@ -172,26 +172,25 @@ class SendEnergyTgMessageTask:
     def send_to_telegram(self, bot_token, chat_id, message, keyboard):
         """发送消息到Telegram"""
         try:
-            # 检查是否为测试模式
-            is_test_mode = (
-                'demo' in str(bot_token).lower() or
-                'test' in str(bot_token).lower() or
+            # 只检查明显的占位符token，移除其他测试模式检测
+            is_placeholder_token = (
                 str(bot_token) == 'your_bot_token' or
-                str(chat_id) in ['123456789', '1234567890'] or  # 检测模拟数据
-                'TR7NHqje' in str(message)  # 检测模拟钱包地址
+                not bot_token or
+                bot_token == ''
             )
 
-            if is_test_mode:
-                self.logger.info(f"[测试模式] 模拟发送Telegram消息到 chat_id={chat_id}")
-                self.logger.info(f"[测试模式] 消息内容: {message[:100]}...")
+            if is_placeholder_token:
+                self.logger.warning(f"[配置错误] Bot token未配置或为占位符，无法发送消息")
                 return
 
+            # 发送真实的Telegram消息
             url = (
                 f"https://api.telegram.org/bot{bot_token}/sendMessage"
                 f"?chat_id={chat_id}&text={quote(message)}&parse_mode=HTML&reply_markup={quote(json.dumps(keyboard))}"
             )
             # 使用 GET 请求通常更稳定用于简单发送，或者确保 POST 数据正确
-            EnergyUtils.send_http_request(url)
+            response = EnergyUtils.send_http_request(url)
+            self.logger.info(f"✅ 成功发送Telegram消息到 chat_id={chat_id}")
         except Exception as e:
             self.logger.error(f"HTTP请求发送失败: {str(e)}")
 
