@@ -124,8 +124,8 @@ MONITOR_CONFIG = {
 ENERGY_RENT_CONFIG = {
     # 能量价格配置 (TRX -> 能量)
     'prices': {
-        'with_u': {'trx': 2.5, 'energy': 65000},    # 对方有U的情况
-        'without_u': {'trx': 5.0, 'energy': 131000}  # 对方无U的情况
+        'with_u': {'trx': 3.0, 'energy': 65000},    # 对方有U的情况
+        'without_u': {'trx': 6.0, 'energy': 131000}  # 对方无U的情况
     },
 
     # 限制配置
@@ -144,7 +144,7 @@ ENERGY_RENT_CONFIG = {
 # 笔数套餐配置
 BISHA_CONFIG = {
     # 笔数套餐价格配置 (TRX/笔)
-    'price_per_bishu': 4.4,
+    'price_per_bishu': 6.0,
 
     # 可购买的笔数选项
     'available_packages': [15, 20, 30, 50, 100, 200, 300, 500],
