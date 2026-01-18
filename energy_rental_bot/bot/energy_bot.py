@@ -393,9 +393,10 @@ class EnergyRentalBot:
         if not user:
             return
 
-        # 检查是否为管理员
-        admin_uid = TELEGRAM_CONFIG['bots'][0].get('admin_uid')
-        if str(user.id) != admin_uid:
+        # 检查是否为管理员（支持多个管理员ID，逗号分隔）
+        admin_uid_str = TELEGRAM_CONFIG['bots'][0].get('admin_uid', '')
+        admin_uids = [uid.strip() for uid in admin_uid_str.split(',') if uid.strip()]
+        if str(user.id) not in admin_uids:
             await update.message.reply_text("❌ 您没有管理员权限")
             return
 
